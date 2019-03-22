@@ -12,6 +12,7 @@ public class MyDeque<E>{
     @SuppressWarnings("unchecked")
     E[] e = (E[])new Object[10];
     data = e;
+    end = data.length - 1;
     size = data.length;
     start = 0;
   }
@@ -21,14 +22,13 @@ public class MyDeque<E>{
       E[] e = (E[])new Object[initialCapacity];
     data = e;
     size = data.length;
-    end = initialCapacity;
+    end = initialCapacity - 1;
     start = 0;
   }
 
   public int size(){
     return size;
   }
-
 
   //toString O(n) - format:  {a b c d }  / {}  /   {VALUE_VALUE2_VALUE3_}  (space after each value)
 
