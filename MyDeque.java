@@ -40,6 +40,7 @@ public class MyDeque<E>{
     result += "}";
     return result;
   }
+
   private void resize() {
     @SuppressWarnings("unchecked")
     E[] temp = (E[]) new Object[size * 2 + 1];
@@ -80,11 +81,10 @@ public class MyDeque<E>{
   }
 
   public E removeLast(){
-    E temp = data[end];
-    for (int i = 0; i < data.length; i++){
-      E[] newdata = new E[size * 2];
-    }
-    return temp;
+    int temp = end;
+    end--;
+    size--;
+    return data[temp];
   }
 
 //{e1, e2, e3, e4}, returns e
