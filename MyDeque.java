@@ -51,33 +51,36 @@ public class MyDeque<E>{
   }
 
   public void addFirst(E element){
-    if (start < end) {
-      for (int i = 1; i < data.length - 1; i++) {
-        data[i + start] = data[start];
-        data[start] = element;
+    resize();
+    if (end == data.length - 1) {
+        end = 0;
       }
-    }
+      else {
+        end++;
+      }
+      data[end] = element;
+      size++;
   }
 
 // {3, 4, 2, 1, 6} if I wanted to add. Increase size.
 //make a new array and copy it over. I multiplied the size by 2 but dk if it's right. I then add.
   public void addLast(E element){
-    E[] temp = new E[size * 2];
-    for (int i = 0; i < data.length; i++){
-      temp[i] = data[i];
-    }
-    temp[data.length] = element;
+    resize();
+    if (end == data.length - 1) {
+    end = 0;
+  }
+  else {
+    end++;
+  }
+  data[end] = element;
+  size++;
   }
 
   public E removeFirst(){
-    E temp = data[start];
-    E[] newdata = new E[size - 1];
-    for (int i = 1; i < data.length + 1; i++){
-      newdata[i - 1] = data[i];
-      data[i - 1] = newdata[i - 1];
-    }
-
-    return temp;
+    int temp = start;
+    start++;
+    size++;
+    return data[temp];
   }
 
   public E removeLast(){
