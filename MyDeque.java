@@ -88,6 +88,9 @@ public class MyDeque<E>{
 }
 
   public void addFirst(E element){
+    if (element == null){
+     throw new NullPointerException();
+   }
     if (size() == 0){
       end++;
       data[end-1] = element;
@@ -112,6 +115,9 @@ public class MyDeque<E>{
 // {3, 4, 2, 1, 6} if I wanted to add. Increase size.
 //make a new array and copy it over. I multiplied the size by 2 but dk if it's right. I then add.
   public void addLast(E element){
+    if (element == null){
+     throw new NullPointerException();
+   }
     if (size() == size) {
       resize();
     }
@@ -125,6 +131,9 @@ public class MyDeque<E>{
 }
 
   public E removeFirst(){
+    if (size() == 0){
+    throw new NoSuchElementException();
+  }
     E temp = data[start];
     data[start] = null;
     if (start == end - 1){
@@ -142,6 +151,9 @@ public class MyDeque<E>{
   }
 
   public E removeLast(){
+    if (size() == 0){
+    throw new NoSuchElementException();
+  }
     E temp = data[end - 1];
     end--;
     return temp;
@@ -156,6 +168,9 @@ public class MyDeque<E>{
   }
 
   public E getLast(){
+    if (start == end){
+     throw new NoSuchElementException();
+   }
     return data[end - 1];
   }
 
