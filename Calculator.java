@@ -21,7 +21,7 @@ public class Calculator{
         else if (data[i].equals("-")){
           Double one = deque.removeLast();
           Double two = deque.removeLast();
-          deque.addLast(one - two);
+          deque.addLast(two - one);
         }
         else if (data[i].equals("*")){
           Double one = deque.removeLast();
@@ -31,12 +31,12 @@ public class Calculator{
         else if (data[i].equals("/")){
           Double one = deque.removeLast();
           Double two = deque.removeLast();
-          deque.addLast(one / two);
+          deque.addLast(two / one);
         }
         else if (data[i].equals("%")){
           Double one = deque.removeLast();
           Double two = deque.removeLast();
-          deque.addLast(one % two);
+          deque.addLast(two / one);
         }
         else {
         deque.addLast(Double.parseDouble(data[i]));
