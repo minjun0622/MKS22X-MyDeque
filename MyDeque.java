@@ -61,7 +61,7 @@ public class MyDeque<E>{
     return result;
   }
 
-
+//when the array gets too big.
   private void resize(){
    @SuppressWarnings("unchecked")
    E[] newData = (E[])new Object[size * 2];
@@ -86,7 +86,7 @@ public class MyDeque<E>{
    size = size * 2;
    data = newData;
 }
-
+  //add the element given to the very beginning.
   public void addFirst(E element){
     if (element == null){
      throw new NullPointerException();
@@ -129,7 +129,7 @@ public class MyDeque<E>{
     end++;
   }
 }
-
+//removes the first element and returns it
   public E removeFirst(){
     if (size() == 0){
     throw new NoSuchElementException();
@@ -149,7 +149,7 @@ public class MyDeque<E>{
     }
     return temp;
   }
-
+  //removes the last element and also returns it.
   public E removeLast(){
     if (size() == 0){
     throw new NoSuchElementException();
@@ -159,14 +159,14 @@ public class MyDeque<E>{
     return temp;
   }
 
-//{e1, e2, e3, e4}, returns e
+//{e1, e2, e3, e4}, returns e1
   public E getFirst(){
     if (start == end){
     throw new NoSuchElementException();
   }
     return data[start];
   }
-
+//returns the last element in the array.
   public E getLast(){
     if (start == end){
      throw new NoSuchElementException();
