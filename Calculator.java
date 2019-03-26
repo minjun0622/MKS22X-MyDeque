@@ -42,8 +42,14 @@ public class Calculator{
         deque.addLast(Double.parseDouble(data[i]));
       }
     }
+    return deque;
+
   }
   public static void main(String[] args) {
+    eval("10 2.0 +");// is 12.0
+    eval("11 3 - 4 + 2.5 *");// is 30.0
+    eval("8 2 + 99 9 - * 2 + 9 -");// is 893.0
+    eval("1 2 3 4 5 + * - -");// is 26.0
 
   }
 
