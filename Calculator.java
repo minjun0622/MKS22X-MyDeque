@@ -36,13 +36,13 @@ public class Calculator{
         else if (data[i].equals("%")){
           Double one = deque.removeLast();
           Double two = deque.removeLast();
-          deque.addLast(two / one);
+          deque.addLast(two % one);
         }
         else {
         deque.addLast(Double.parseDouble(data[i]));
       }
     }
-    return deque;
+    return deque.getLast();
 
   }
   public static void main(String[] args) {
@@ -50,7 +50,6 @@ public class Calculator{
     eval("11 3 - 4 + 2.5 *");// is 30.0
     eval("8 2 + 99 9 - * 2 + 9 -");// is 893.0
     eval("1 2 3 4 5 + * - -");// is 26.0
-
   }
 
 }
